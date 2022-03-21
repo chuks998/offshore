@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> -->
+    <title>{{user.username}} dashboard</title>
+</head>
+<body>
+    <section>
+        <nav>
+            <div class="logo">
+                <img src="/static/image/SWISS.png" alt="">
+            </div>
+            <span class="shell">
+                <span class="lines"></span>
+                <span class="lines"></span>
+                <span class="lines"></span>
+
+                <ul>
+                    <li><a href="#">logout</a></li>
+                </ul>
+            </span>
+        </nav>
+        <div class="profile">
+            <strong>{{user.first_name}} {{user.last_name}}</strong>
+            <span>
+                <img src="/static/image/outline_account_circle_black_20.png" alt="">
+            </span>
+        </div>
+
+        <div class="holder">
+            <div class="top">
+                <span>savings</span>
+                <span>23/12/2022</span>
+            </div>
+            <div class="center">
+                &dollar; {{user.accountdetail.account_balance}}
+            </div>
+            <div class="cdnum">
+                <span class="one">{{user.accountdetail.account_number}}</span>
+                <span class="two">master card</span>
+            </div>
+        </div>
+
+        <div class="status">
+            <div class="action">
+                <span><a href="{% url 'history' %}">transaction</a><img src="/static/image/view_list_black_24dp.svg" ></span>
+                <span><a href="{% url 'make_transfer' %}">transfer</a><img src="/static/image/history_black_24dp.svg" ></span>
+            </div>
+
+            <div class="history">
+                {% for transfer in transfer %}
+                <div class="hist">
+                    <div class="names">
+                        <span><p>{{transfer.reciver_name}}</p></span>
+                        <span><p>{{transfer.sending_user}}</p></span>
+                    </div>
+                    <div class="numbers">
+                        <span><p>{{transfer.date}}</p></span>
+                        <span><p class="red">-&dollar;{{transfer.amount}}</p></span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+</html>

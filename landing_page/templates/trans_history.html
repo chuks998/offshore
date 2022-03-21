@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/trans_history.css">
+    <title>username transactions history</title>
+</head>
+<body>
+    <section>
+        
+        <nav>
+            <div class="logo">
+                <img src="/static/image/SWISS.png" alt="">
+            </div>
+        </nav>
+        <div class="history">
+            {% for trans in transfer %}
+            <div class="hist">
+                <div class="names">
+                    <span><p>{{trans.reciver_name}}</p></span>
+                    <span><p>{{trans.sending_user}}</p></span>
+                </div>
+                <div class="numbers">
+                    <span><p>{{trans.date}}</p></span>
+                    <span><p class="red">-&dollar;{{trans.amount}}</p></span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>

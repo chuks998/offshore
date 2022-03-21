@@ -1,0 +1,273 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: #f1f1f1;
+    font-size: 10px;
+    text-decoration: none;
+    list-style: none;
+    font-family: Nunito, Roboto, Arial;
+    text-transform: uppercase;
+    transition: ease-in-out .4s;
+}
+body{
+    overflow: hidden;
+    /* background: linear-gradient(120deg, #ff4500 0%, #fff 100%); */
+}
+section{
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: linear-gradient(120deg, #ff4500 0%, #fff 100%);
+}
+nav{
+    height: 100px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 1px 1px 7px 1px #cccccc20;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo{
+    height: 100px;
+    flex: 0 0 40;
+    border-radius: 100%;
+    box-shadow: 1px 1px #cccccc40;
+}
+.logo img{
+    height: 100px;
+    width: auto;
+    border-radius: 100%;
+
+}
+.shell{
+    width: 40px;
+    height: 50%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    visibility: hidden;
+}
+.lines{
+    border: 3px solid;
+    width: 100%;
+    border-radius: 100%;
+}
+.shell ul{
+    position: absolute;
+    top: 150%;
+    border: 1px solid;
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+.shell:hover ul{
+    display: block;
+}
+
+.holder{
+    height: 300px;
+    width: 60%;
+    margin: 50px auto;
+    background: #555;
+    border-radius: 20px;
+    position: relative;
+}
+.top{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.top span{
+    font-size: 180%;
+    letter-spacing: 1px;
+}
+.center{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 400%;
+    letter-spacing: 2px;
+    font-family: Roboto;
+}
+.cdnum{
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.cdnum .one{
+    font-size: 300%;
+}
+.cdnum .two{
+    background: linear-gradient(90deg, #ff2e2e 0%, #ffef16e0 100%);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 30%;
+    font-weight: 700;
+}
+.status{
+    background: #ccc;
+    width: 70%;
+    margin: 40px auto;
+    height: 400px;
+}
+.action{
+    height: 50px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+}
+.action span{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.action a{
+    color: #ff2e2e;
+}
+.history{
+    height: calc(100% - 50px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.hist{
+    background: #fff;
+    height: 50px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+ p{
+    color: #ccc;
+    font-size: 150%;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.red{
+    color: #ff2e2e;
+}
+
+.profile{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: orangered;
+}
+.profile strong{
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+}
+.profile span{
+    margin-left: 7px;
+}
+.profile img{
+    height: 50px;
+    width: auto;
+    border-radius: 100%;
+}
+
+@media only screen and (max-width: 1024px){
+    section{
+        width: 100%;
+    }
+    nav{
+        height: 150px;
+    }
+    .status{
+        height: 700px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .logo{
+        height: 150px;
+    }
+    .logo img{
+        height: 150px;
+    
+    }
+    .holder{
+        height: 300px;
+        width: 80%;
+        margin: 50px auto;
+    }
+    .status{
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    nav{
+        height: 100px;
+    }
+    .logo{
+        height: 100px;
+    }
+    .logo img{
+        height: 100px;
+    
+    }
+    .lines{
+        border: 2px solid #666;
+        border-radius: 10px;
+    }
+    .shell{
+        width: 30px;
+        height: 40%;
+    }
+    .holder{
+        height: 250px;
+        width: 98%;
+        margin: 30px auto;
+    }
+    .top span{
+        font-size: 140%;
+    }
+    .center{
+        height: 50px;
+        font-size: 250%;
+        top: 30%;
+    }
+    .cdnum .one{
+        font-size: 200%;
+    }
+    .cdnum .two{
+        border-radius: 10%;
+    }
+    .status{
+        background: #ccc;
+        width: 98%;
+        margin: 40px auto;
+        height: 420px;
+    }
+    p{
+       color: #ccc;
+       font-size: 110%;
+       font-weight: 700;
+       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   }
+
+}
